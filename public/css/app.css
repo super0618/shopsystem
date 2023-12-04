@@ -13707,6 +13707,7 @@ nav {
   border: 1px solid black;
   color: #222;
   border-radius: 0;
+  margin-top: 1em;
 }
 
 .custom-border-success {
@@ -13756,7 +13757,6 @@ button {
 footer {
   color: white;
   padding: 4em;
-  margin-top: 5em;
 }
 
 .footer {
@@ -13793,7 +13793,7 @@ li a:hover {
 }
 
 .filter-header {
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
 .card-body {
@@ -13832,5 +13832,61 @@ a.custom-card:hover {
 .center {
   justify-content: center;
   align-content: center;
+}
+
+.cart-option {
+  border: none;
+}
+
+.filter-ul {
+  padding: 0;
+  background-color: #ddd;
+  align-content: center;
+  align-items: center;
+}
+
+.filter-ul li {
+  border-bottom: 1px solid #bbb;
+  color: #222;
+}
+
+.filter-ul li a {
+  padding: 0.8em;
+  color: #222;
+  text-decoration: none;
+  display: block;
+}
+
+.filter-ul li:hover {
+  background-color: #777;
+}
+
+.active-sort {
+  background-color: green;
+  color: white;
+  border: 1px solid green;
+  border-radius: 4px;
+  padding: 0.3em;
+}
+
+.active-cat {
+  background-color: #eee;
+  color: #222;
+  border-left: 1px solid #bbb;
+}
+
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.inline-form-button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: #eee;
+  font-size: 13px;
+  color: #444;
 }
 
