@@ -11,11 +11,26 @@ class ShopController extends Controller
     
 
     public function index() {
+<<<<<<< HEAD
+        $pagination = 12;
+=======
+>>>>>>> main
         if(request()->category) {
             $category = Category::where('slug', request()->category)->get()->first();
             $products = Product::where('category_id', $category->id);
             $categoryName = $category->name;
         } else {
+<<<<<<< HEAD
+            $products = Product::where('featured', true);
+            $categoryName = 'Featured';
+        }
+        if(request()->sort == 'low_high') {
+            $products = $products->orderBy('price')->paginate($pagination);
+        } else if(request()->sort == 'high_low') {
+            $products = $products->orderBy('price', 'desc')->paginate($pagination);
+        } else {
+            $products = $products->inRandomOrder()->paginate($pagination);
+=======
             $products = Product::inRandomOrder()->where('featured', true);
             $categoryName = 'Featured';
         }
@@ -25,6 +40,7 @@ class ShopController extends Controller
             $products = $products->orderBy('price', 'desc')->paginate(9);
         } else {
             $products = $products->orderBy('id')->paginate(9);
+>>>>>>> main
         }
         $categories = Category::all();
         return view('shop')->with([
@@ -36,7 +52,12 @@ class ShopController extends Controller
 
     public function show($slug) {
         $product = Product::where('slug', $slug)->firstOrFail();
+        $images = json_decode($product->images);
         $mightLike = Product::where('slug', '!=', $product->slug)->mightAlsoLike()->get();
-        return view('product')->with('product', $product)->with('mightLike', $mightLike);
+        return view('product')->with([
+            'product' => $product,
+            'mightLike' => $mightLike,
+            'images' => $images
+        ]);
     }
 }

@@ -4,14 +4,31 @@
 
 <div class="container">
     <div class="row" style="margin-bottom: 3em">
+<<<<<<< HEAD
+        <div class="col-md-4 product-image">
+            <div>
+                <img src="{{ productImage($product->image) }}" width="100%" height="100%" id="current-image">
+            </div>
+            <div class="image-thumbnails">
+                @if ($images)
+                    <img src="{{ productImage($product->image) }}" class="image-thumbnail active">
+                    @foreach ($images as $image)
+                        <div>
+                            <img src="{{ productImage($image) }}" class="image-thumbnail">
+                        </div>
+                    @endforeach
+                @endif
+            </div>
+=======
         <div class="col-md-5 product-image">
             <img src="{{ Asset('images/products/' . $product->image) }}" height="350px" width="350px">
+>>>>>>> main
         </div>
-        <div class="product-details col-md-5">
+        <div class="product-details col-md-5 offset-md-1">
             <h2 class="lead">{{ $product->name }}</h2>
             <p class="light-text">{{ $product->details }}</p>
-            <h3 class="lead">${{ $product->price }}</h3>
-            <p class="light-text">{{ $product->description }}</p>
+            <h3 class="lead">$ {{ format($product->price) }}</h3>
+            <p class="light-text">{!! $product->description !!}</p>
             <form action="{{ route('cart.store') }}" method="POST">
                 @csrf()
                 <input type="hidden" name="id" value="{{ $product->id }}">
@@ -25,5 +42,30 @@
 </div>
 @include('partials.might-like')
 <!-- end page content -->
+
+@endsection
+
+@section('scripts')
+
+    <script>
+        $(document).ready(function () {
+            // force the height to be as as long as the width
+            var w = $('#current-image').width();
+            $('#current-image').css({'height': w + 'px'});
+
+            $('.image-thumbnail').on('click', (e) => {
+                $('.image-thumbnail').removeClass('active');
+                $(e.currentTarget).addClass('active');
+                if($(e.currentTarget).attr('src') != $('#current-image').attr('src')) {
+                    $(e.currentTarget).addClass('active');
+                    $('#current-image').animate({'opacity' : 0}, 300, function() {
+                        $('#current-image').attr('src', $(e.currentTarget).attr('src'));
+                        $('#current-image').animate({'opacity' : 1}, 400);
+                    })
+                }
+            });
+            
+        });
+    </script>
 
 @endsection

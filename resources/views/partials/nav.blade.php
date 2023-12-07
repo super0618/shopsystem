@@ -7,6 +7,9 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<<<<<<< HEAD
+            {{ menu('main', 'partials.menu.main') }}
+=======
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ route('shop.index') }}">Shop</a>
@@ -28,6 +31,7 @@
                     </a>
                 </li>
             </ul>
+>>>>>>> main
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control custom-border mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn custom-border my-2 my-sm-0" type="submit">Search</button>

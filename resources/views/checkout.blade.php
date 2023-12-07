@@ -69,7 +69,11 @@
                         <tr>
                             <td>
                                 <a href="{{ route('shop.show', $item->model->slug) }}">
+<<<<<<< HEAD
+                                    <img src="{{ productImage($item->model->image) }}" height="100px" width="100px"></td>
+=======
                                     <img src="{{ Asset('images/products/' . $item->model->image) }}" height="100px" width="100px"></td>
+>>>>>>> main
                                 </a>
                             <td>
                             <td>
@@ -92,7 +96,11 @@
                     <span class="light-text">Subtotal</span>
                 </div>
                 <div class="col-md-4 offset-md-4">
+<<<<<<< HEAD
+                    <span class="light-text" style="display: inline-block">${{ format($subtotal) }}</span>
+=======
                     <span class="light-text" style="display: inline-block">${{ number_format($subtotal, 2) }}</span>
+>>>>>>> main
                 </div>
             </div>
             @if (session()->has('coupon'))
@@ -108,7 +116,11 @@
                         </form>
                     </div>
                     <div class="col-md-4">
+<<<<<<< HEAD
+                        <span class="light-text" style="display: inline">- ${{ format($discount) }}</span>
+=======
                         <span class="light-text" style="display: inline">- ${{ number_format($discount, 2) }}</span>
+>>>>>>> main
                     </div>
                 </div><hr>
                 <div class="row">
@@ -116,7 +128,11 @@
                         <span class="light-text">New Subtotal</span>
                     </div>
                     <div class="col-md-4 offset-md-4">
+<<<<<<< HEAD
+                        <span class="light-text" style="display: inline-block">${{ format($newSubtotal) }}</span>
+=======
                         <span class="light-text" style="display: inline-block">${{ number_format($newSubtotal, 2) }}</span>
+>>>>>>> main
                     </div>
                 </div>
             @endif
@@ -125,7 +141,11 @@
                     <span class="light-text">Tax(21%)</span>
                 </div>
                 <div class="col-md-4 offset-md-4">
+<<<<<<< HEAD
+                    <span class="light-text" style="display: inline-block">${{ format($tax) }}</span>
+=======
                     <span class="light-text" style="display: inline-block">${{ number_format($tax, 2) }}</span>
+>>>>>>> main
                 </div>
             </div>
             <div class="row">
@@ -133,7 +153,11 @@
                     <span>Total</span>
                 </div>
                 <div class="col-md-4 offset-md-4">
+<<<<<<< HEAD
+                    <span class="text-right" style="display: inline-block">${{ format($total) }}</span>
+=======
                     <span class="text-right" style="display: inline-block">${{ number_format($total, 2) }}</span>
+>>>>>>> main
                 </div>
             </div>
             <hr>
