@@ -14,7 +14,11 @@
                         <tr>
                             <td>
                                 <a href="{{ route('shop.show', $item->model->slug) }}">
+<<<<<<< HEAD
                                     <img src="{{ productImage($item->model->image) }}" height="100px" width="100px">
+=======
+                                    <img src="{{ Asset('images/products/' . $item->model->image) }}" height="100px" width="100px">
+>>>>>>> main
                                 </a>
                             </td>
                             <td>
@@ -24,6 +28,7 @@
                                 </a>
                             </td>
                             <td>
+<<<<<<< HEAD
                                 <form action="{{ route('cart.destroy', [$item->rowId, 'default']) }}" method="POST" id="delete-item">
                                     @csrf()
                                     @method('DELETE')
@@ -39,6 +44,17 @@
                                 document.getElementById('save-later').submit();">
                                     Save for later
                                 </button>
+=======
+                                <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
+                                    @csrf()
+                                    @method('DELETE')
+                                    <button type="submit" class="cart-option">remove</button><br>
+                                </form>
+                                <form action="{{ route('cart.save-later', $item->rowId) }}" method="POST">
+                                    @csrf()
+                                    <button type="submit" class="cart-option text-decoration-none">save for later</button>
+                                </form>
+>>>>>>> main
                             </td>
                             <td class="">
                                 <select class='quantity' data-id='{{ $item->rowId }}'>
@@ -47,7 +63,11 @@
                                     @endfor
                                 </select>
                             </td>
+<<<<<<< HEAD
                             <td>${{ format($item->subtotal) }}</td>
+=======
+                            <td>${{ $item->subtotal }}</td>
+>>>>>>> main
                         </tr>
                     @endforeach
                 </tbody>
@@ -61,9 +81,15 @@
                         </p>
                     </div>
                     <div class="col-md-3 offset-md-1">
+<<<<<<< HEAD
                         <p class="text-right light-text">Subtotal &nbsp; &nbsp;${{ format(Cart::subtotal()) }}</p>
                         <p class="text-right light-text">Tax(21%) &nbsp; &nbsp; ${{ format(Cart::tax()) }}</p>
                         <p class="text-right">Total &nbsp; &nbsp; ${{ format(Cart::total()) }}</p>
+=======
+                        <p class="text-right light-text">Subtotal &nbsp; &nbsp;${{ Cart::subtotal() }}</p>
+                        <p class="text-right light-text">Tax(21%) &nbsp; &nbsp; ${{ Cart::tax() }}</p>
+                        <p class="text-right">Total &nbsp; &nbsp; ${{ Cart::total() }}</p>
+>>>>>>> main
                     </div>
                 </div>
             </div>
@@ -87,7 +113,11 @@
                             <tr>
                                 <td>
                                     <a href="{{ route('shop.show', $item->model->slug) }}">
+<<<<<<< HEAD
                                         <img src="{{ productImage($item->model->image) }}" height="100px" width="100px"></td>
+=======
+                                        <img src="{{ Asset('images/products/' . $item->model->image) }}" height="100px" width="100px"></td>
+>>>>>>> main
                                     </a>
                                 <td>
                                     <a href="{{ route('shop.show', $item->model->slug) }}" class="text-decoration-none">
@@ -96,6 +126,7 @@
                                     </a>
                                 </td>
                                 <td>
+<<<<<<< HEAD
                                     <button class="cart-option btn btn-danger btn-sm custom-border" onclick="
                                         document.getElementById('delete-form').submit();">
                                         remove
@@ -117,6 +148,39 @@
                         @csrf()
                     </form>
 
+=======
+                                    <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
+                                        @csrf()
+                                        @method('DELETE')
+                                        <button type="submit" class="cart-option">remove</button><br>
+                                    </form>
+                                    <form action="{{ route('cart.add-to-cart', $item->rowId) }}" method="POST">
+                                        @csrf()
+                                        <button type="submit" class="cart-option text-decoration-none">Add to cart</button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <div class="center">
+                                        <div class="input-group">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
+                                                <span class="glyphicon glyphicon-minus"></span>
+                                                </button>
+                                            </span>
+                                            <input width="1em" type="text" name="quant[2]" class="form-control input-number" value="10" min="1" max="100">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>${{ $item->model->price }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+>>>>>>> main
                 </table>
             @else
                 <div class="alert alert-primary">
