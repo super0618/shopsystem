@@ -1,17 +1,8 @@
 <?php
 
 return [
-<<<<<<< HEAD
-=======
-    /*
-    |--------------------------------------------------------------------------
-    | User config
-    |--------------------------------------------------------------------------
-    |
-    | Here you can specify voyager user configs
-    |
-    */
->>>>>>> main
+
+    'password' => env('VOYAGER_ADMIN_PASSWORD'),
 
     'user' => [
         'add_default_role_on_register' => true,

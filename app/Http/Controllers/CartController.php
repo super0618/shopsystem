@@ -40,17 +40,11 @@ class CartController extends Controller
         return response()->json(['success' => ''], 200);
     }
 
-<<<<<<< HEAD
     public function destroy($id, $cart) {
         if($cart == 'default')
         Cart::instance('default')->remove($id);
         else if($cart = 'saveForLater')
         Cart::instance('saveForLater')->remove($id);
-=======
-    public function destroy($id) {
-        session()->forget('coupon');
-        Cart::remove($id);
->>>>>>> main
         session()->flash('success', 'item has been removed');
         return back();
     }
