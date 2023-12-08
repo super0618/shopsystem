@@ -4,7 +4,6 @@
 
 <div class="container">
     <div class="row" style="margin-bottom: 3em">
-<<<<<<< HEAD
         <div class="col-md-4 product-image">
             <div>
                 <img src="{{ productImage($product->image) }}" width="100%" height="100%" id="current-image">
@@ -19,10 +18,6 @@
                     @endforeach
                 @endif
             </div>
-=======
-        <div class="col-md-5 product-image">
-            <img src="{{ Asset('images/products/' . $product->image) }}" height="350px" width="350px">
->>>>>>> main
         </div>
         <div class="product-details col-md-5 offset-md-1">
             <h2 class="lead">{{ $product->name }}</h2>
