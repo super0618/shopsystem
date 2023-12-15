@@ -6,6 +6,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 Route::get('/', 'WelcomePageController@index')->name('welcome');
 Route::get('/shop', 'ShopController@index')->name('shop.index');
 Route::get('/shop/{product}', 'ShopController@show')->name('shop.show');
+Route::get('/shop/search/{query}', 'ShopController@search')->name('shop.search');
 
 // Cart
 Route::get('/cart', 'CartController@index')->name('cart.index');
@@ -16,7 +17,8 @@ Route::post('/cart/add-to-cart/{product}', 'CartController@addToCart')->name('ca
 Route::patch('/cart/{product}', 'CartController@update')->name('cart.update');
 
 // checkout
-Route::get('/checkout', 'CheckoutController@index')->name('checkout.index')->middleware('auth');
+Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
+Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
 Route::get('/guest-checkout', 'CheckoutController@index')->name('checkout.guest');
 
 // coupon
