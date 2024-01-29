@@ -1,0 +1,32 @@
+m7md3omer (30):
+      initial commit
+      added the styles, scripts, header and footer of the pages
+      added the basic routes (home, shop, product)
+      Cart and checkout
+      change quantity feature with ajax request
+      filter products using categories and price, added pagination and styled active categoy
+      Coupon discount by percentage or fixed price
+      changed the category table's name to category instead of categories so it will not collide with voyager package table
+      added voyager as an admin controller
+      played with voyager
+      add a custom menu via voyager
+      added image uploading by voyager and fixed ordering by price, also added an autoload file to put custom global functions
+      formatting prices
+      cleaned my scss files and added multiple images for a product via voyager , styled them and added animation using jquery
+      fixed deleting items from cart and save for later
+      added guest checkout
+      added tag table and product_tag intermediary table for the many to many relationship between the products table and the tags table , also implemented the BREAD in voyager
+      Made a custom artisan command to populate voyager tables with the necessary data, also seeding the database and added pictures for products
+      added an example env file to use when cloning the repo
+      fixed timezone
+      added the option to force the artisan command without confirmation message
+      created orders table, linked it with products table via an intermediary table, also customized voyager view template for orders to show the corresponding products for each order in a nice table with their images
+      added Seeders for orders and order_product tables, also filled voyager tables with settings needed for the orders table BREAD operations and updated the artisan command to reflect those changes
+      sending shipping email
+      implemented searching by using a light searching package(nicolaslopezj/searchable) to make the searching process more dynamic
+      added algolia for optimized and accurate search
+      added algolia instant search page and styled the output
+      added search by tags
+      added dynamic title to pages
+      removed algolia, added quantity to products and added stock status to products
+
