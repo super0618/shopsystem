@@ -58,7 +58,7 @@
     searcher.on('keypress',function(e) {
         if(e.which == 13) {
             if(searcher.val().length > 2){
-                location.href = 'http://localhost:8000/shop/search/' + searcher.val();
+                location.href = '/shop/search/' + searcher.val();
             } else {
                 alert('Minimun query length is 3');
             }
